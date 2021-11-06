@@ -1,0 +1,68 @@
+{{#unless user}}
+<nav><span id = "teamname">FAI</span><a href="./login"><span>Login</span></a><a href="./newAccount"><span>New Users</span></a></nav>
+{{/unless}}
+
+{{#if user}}
+<nav ><img id  = "userimg" src="{{userImage}}" alt=""><span id = "teamname">FAI</span><a href="/myHomePage"><span>MyPage</span></a><a href="/logout"><span>Logout</span></a></nav>
+{{/if}}
+
+<div class = "mainbox">
+    <img class = "bkgpic" src="./images/nautilus1.png" alt="bkgpic" >
+<h1>Welcome to our Japanese ACGs site!<br>Designed and developed by Isaac, Frankie, Anthea</h1>    
+</div>
+
+<div id="main-cont">
+    {{#if message}}
+    <p class = "msg">{{message}}</p>
+    {{/if}}
+
+    {{#if articles}}
+    <div id = "content-box">
+        <h1 id = "main-title">All Articles</h1>    
+        <div id = "sorting">
+            <label for="orderby">Sort articles by:</label>
+                <select name="orderby" id="orderby">
+                    <option value="time">Publish time</option>
+                    <option value="Author">Author</option>
+                    <option value="title">Article title</option>
+                </select>    
+        </div>
+
+        <div id="sort-articles">
+            <div class = "article-sec">
+            {{#each articles}} 
+                <div class = "eachArticle" style = "width: 475px">
+                     <div class = "cm-link">
+                        <a href="/fullArticleAndComment?id={{this.id}}&authorID={{this.userID}}">{{#unless ../user.id}}Log in to{{/unless}} view the full article and comments</a> 
+                    </div>  
+
+                    <div class = "title-img">
+
+                        <h1 itemprop="title" class = "article_title">{{this.title}}</h1>
+                            {{#if this.articleImageUrl}}
+                            <img class = "aimg" src="{{this.articleImageUrl}}" alt="" style = "width: 475px">
+                            {{/if}}
+                    </div>
+                    
+                    <span class="idSpan" hidden>{{this.id}}</span>
+
+                    <div class = "author-sec">
+                        <img src="{{this.authorIcon}}" alt="">
+                            <span itemprop="author">{{this.authorName}}</span>
+                            <span itemprop="publishTime">{{this.publishTime}}</span>
+                    </div>
+                    
+                    <div class = "content">
+                        <pre>{{{this.content}}}</pre>    
+                    </div>
+  
+                </div>
+                
+            {{/each}}
+            </div>
+
+            {{/if}}
+            
+        </div>
+    </div>
+</div>

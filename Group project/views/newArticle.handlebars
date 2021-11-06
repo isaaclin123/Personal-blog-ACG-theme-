@@ -1,0 +1,61 @@
+<div id="all-container">
+    <nav><img id  = "userimg" src="{{user.avatar_image}}" alt="" width="50"><span id = "teamname">FAI</span><a href="./"><span>Home</span></a><a href="./myHomePage"><span>MyPage</span></a><a href="./logout"><span>Logout</span></a></nav>
+
+    <div id = "main-container">
+        <h2>Create New Article</h2>
+        <div id="both-forms">
+            <div id = "image-form">
+                <div id = "imageDisplayDiv">
+                    {{#if thisArticleImage}}
+                    <img src="{{thisArticleImage}}" alt="" id="currentImage" style = "max-height: 400px"><br> 
+                    {{/if}}
+                </div>
+                
+                <form action="/uploadImage" method="POST" enctype="multipart/form-data">
+                        <label for="inpFile">Upload an image here!</label>
+                        <span class="form-group">
+                            <input id="inpFile" type="file" name="imageFile" accept=".png,.jpg,.jpeg,.bmp,.gif">
+                        </span>
+
+                        <span class="form-group-align-start">
+                            <button type="submit">Upload</button>
+                            {{#if message}}
+                            <span id = "message">{{message}}</span>
+                            {{/if}}
+                        </span>
+                </form> 
+                   
+            </div>
+
+            <div id = "text-form">
+                <form action="/newArticle" method ="POST">
+
+                    <div id="create_title">
+                        <label for="title">Enter Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+
+                    <div id="editor-container" ><h1>Your title here</h1>
+                    <em>Your article content here</em>
+                    </div>
+
+                    <pre hidden><code id="output-html"></code></pre>
+
+                    <div>
+                    <button type="submit" hidden >Post</button>
+                    </div>
+                    
+                    <br>
+                    <div id = "post-article">
+                        <button id="submitButton">Post article</button>&nbsp;&nbsp;<span id="tipForTitle" style="margin:10px;"></span>
+                    </div>
+                </form>        
+            </div>
+            
+        </div>
+        
+
+
+
+    </div>
+</div>

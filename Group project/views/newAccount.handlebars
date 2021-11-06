@@ -1,0 +1,104 @@
+<nav><span id = "teamname">FAI</span><a href="./"><span>Home</span></a><a href="./login"><span>Login</span></a></nav>
+<div id ="newac-container">
+
+    <div id = "background-pic"></div>
+    <div id = "newac-form">
+        
+        <div id= "error-msg">
+            {{#if errorMessage}}
+            {{errorMessage}}
+            {{/if}}     
+        </div>
+   
+        <div id = "nform-inner">
+            <h1>New Account</h1>
+            <form action="/app/newAccount" method="POST">
+
+                <div class = "txtfield">
+                    <input type="text" name="username" id="txtUsername" required>
+                    <span></span>
+                    <label for="txtUsername">Username:</label>
+                    <alert class = "sys-message" id="usernameAvailability"></alert>
+                </div>
+
+                <div class = "txtfield">
+                    <input type="password" name="password1" id="password1" required>
+                    <span></span>
+                    <label for="txtPassword">Password:</label>
+                </div>
+
+                <div class = "txtfield">
+                    <input type="password" name="password2" id="password2" required>
+                    <span></span>
+                    <label for="txtPassword">Re-enter Password:</label>
+                    <alert class = "sys-message" id="passwordConfirmation"></alert>
+                </div>
+
+                <div class = "txtfield">
+                    <input type="text" name="first_name" id="first_name" required>
+                    <span></span>
+                    <label for="first_name">First Name:</label>
+                </div>
+
+                <div class = "txtfield">
+                    <input type="text" name="last_name" id="last_name" required>
+                    <span></span>
+                    <label for="last_name">Last Name:</label>
+                </div>
+
+                <div class = "txtarea">
+                    <label for="description">Self Description:</label><br>
+                    <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                </div>
+
+                <div class = "dob-field">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" name="dob" id="dob" required>
+                </div>
+
+                <div id="avatars">
+                    <p>Choose your Avatar icon:</p>
+
+                <div class = "icons">
+                    <label class="avatars">
+                        <input type="radio" name="avatar" value="./images/avatar_ocata.png" checked>
+                        <img src="./images/avatar_ocata.png" alt="man" width="50">
+                    </label>
+
+                    <label class="avatars">
+                        <input type="radio" name="avatar" value="./images/avatar_kyouka.png">
+                        <img src="./images/avatar_kyouka.png" alt="woman" width="50">
+                    </label>
+
+                    <label class="avatars">
+                        <input type="radio" name="avatar" value="./images/avatar_ocata.png" checked>
+                        <img src="./images/avatar_silver.png" alt="cat" width="50">
+                    </label>
+
+                    <label class="avatars">
+                        <input type="radio" name="avatar" value="./images/avatar_promerlin.png" checked>
+                        <img src="./images/avatar_promerlin.png" alt="promerlin" width="50">
+                    </label>
+
+                    <label class="avatars">
+                        <input type="radio" name="avatar" value="./images/avatar_orfevre.png" checked>
+                        <img src="./images/avatar_orfevre.png" alt="orfevre" width="50">
+                    </label>
+
+                    <label class="avatars">
+                        <input type="radio" name="avatar" value="./images/avatar_vasili.png" checked>
+                        <img src="./images/avatar_vasili.png" alt="vasili" width="50">
+                    </label>                    
+                </div>
+
+                <div id = "sub-res">
+                    <button type="submit" value = "submit" id="submitButton">Create account</button>
+                    <button type="reset" value = "reset form">Reset Form</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,123 @@
+<div id="all-container">
+    <nav><img id  = "userimg" src="{{userImage}}" alt="" width="50"><span id = "teamname">FAI</span><a href="/">Back to Home</a><a href="/myHomePage">Back to MyPage</a><a href="/logout">logout</a></nav>
+
+        <div id = "big-container">
+            <div id = "tips">
+                {{#if isAuthor}}
+                <p>	&#128512;	&#128512;	&#128512;	&#128512;</p>
+                {{else}}
+                <p>	&#129312;	&#129312;	&#129312;	&#129312;</p>
+                {{/if}}    
+            </div>
+<div id = "container">
+    {{#with article}}
+    <div id="divForArticle">
+        <div class = "eachArticle">
+                    <div class = "title-img">
+
+                        <h1 itemprop="title" class = "article_title">{{this.title}}</h1>
+                            {{#if this.articleImageUrl}}
+                            <img class = "aimg" src="{{this.articleImageUrl}}" alt="">
+                            {{/if}}
+                    </div>
+                    <span id="authorID" hidden>{{this.userID}}</span>
+                    <span class="idSpan" hidden>{{this.id}}</span>
+
+                    <div class = "author-sec">
+                        <img src="{{../userImage}}" alt="" width="30">
+                            <span itemprop="author">{{this.authorName}}</span>
+                            <span itemprop="publishTime">{{this.publishTime}}</span>
+                    </div>
+                    
+                    <div class = "content">
+                        <pre>{{{this.content}}}</pre>    
+                    </div>
+        </div>
+    <div id="divForComment">
+        
+            <div class="article-actions">
+                <div id = "comment-toolbox">
+                    <button id="showComment" class="btn-primary">Show comment</button>
+                    <button id="hideComment" class="btn-primary">Hide Comment</button>
+                        <button id="addComment" class="btn-primary" onclick="openComment('article-{{this.id}}')">Add you comment here</button><br>
+                    <a href="/delete/comment?articleID={{this.id}}" id="deleteArticleComments" class="btn-primary">Delete your article's comments</a>
+                </div>
+            </div>
+                <form action="/app/comment" method="GET" id="article-{{this.id}}" hidden>
+                    <input type="hidden" name="commenterName" value="{{../user.username}}">
+                    <input type="hidden" name="commentPosterID" value="{{../user.id}}" id="commentPostID" >
+                    <input type="hidden" name="articleID" id="articleID" value="{{../article.id}}">
+                    <input type="hidden" name="parentCommentID" id="parentCommentID" value="0">
+                    <textarea name="comment" class="comment-field" id="comment" cols="30" rows="10" placeholder="New comment..." required></textarea>
+                    <button type="submit" class="btn post-comment-btn">Comment</button>
+                    <button type="button" class="btn post-comment-btn" onclick="closeComment('article-{{this.id}}')">Close</button>
+                </form>
+    
+
+{{/with}}
+
+    {{#if message}}
+    <p class = "msg">{{message}}</p>  
+    {{/if}}
+
+{{#if nestedComments}}
+    <div id="commentDiv">
+        {{#each nestedComments}}
+            <div class="comment-block" style="margin-left: calc({{this.level}}*12px + 30*{{this.level}}px);">
+                <img class = "user-avatar" src="{{this.user.avatar_image}}" alt="">
+                <div class="comment-body">
+                    <div class="comment-info">
+                        <span class="name">{{this.user.fname}} {{this.user.lname}}</span>
+                        <span class="comment-time">{{this.commentTime}}</span>
+                    </div>
+                    <div class="comment-text">
+                        <pre id="comment-text-{{this.id}}">{{this.texts}}</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-primary" onclick="openComment('comment-{{this.id}}')">Reply</button>
+                        {{#if this.owner}}
+                            <a class="btn-primary" href="/delete/comment?commentID={{this.id}}">Delete</a>
+                        {{else}}
+                            {{#if ../isAuthor}}
+                                <a class="btn-primary" href="/delete/comment?commentID={{this.id}}">Delete</a>
+                            {{/if}}
+                        {{/if}}
+                        <div class="likes">
+                            <a href="/upvote/comment/{{this.id}}">
+                                <img src="./images/up.svg" alt="">
+                            </a>
+                            {{this.likes}}
+                        </div>
+                        <div class="dislikes">
+                            <a href="/downvote/comment/{{this.id}}">
+                                <img src="./images/down.svg" alt="">
+                            </a>
+                            {{this.dislikes}}
+                        </div>
+                    </div>
+                    <form action="/app/comment" method="GET" id="comment-{{this.id}}" hidden>
+                        <input type="hidden" name="commenterName" value="{{../user.username}}">
+                        <input type="hidden" name="commentPosterID" value="{{../user.id}}" id="commentPostID" >
+                        <input type="hidden" name="articleID" id="articleID" value="{{../article.id}}">
+                        <input type="hidden" name="parentCommentID" id="parentCommentID" value="{{this.id}}">
+                        <textarea name="comment" class="comment-field" id="comment" cols="30" rows="10" placeholder="New comment..." required></textarea>
+                        <button type="submit" class="btn post-comment-btn">Comment</button>
+                        <button type="button" class="btn post-comment-btn" onclick="closeComment('comment-{{this.id}}')">Close</button>
+                    </form>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    {{else}}
+    <p>No comment yet!</p>
+    {{/if }}
+    </div>
+</div>
+<script>
+    function openComment(id) {
+        document.getElementById(id).style.display = 'block';
+    }
+    function closeComment(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+</script>

@@ -1,0 +1,59 @@
+<nav><img id  = "userimg" src="{{userImage}}" alt="" width="50"><span id = "teamname">FAI</span><a href="./newArticle"><span>Create New Article</span></a><a href="./"><span>Home Page</span></a><a href="/user"><span>Edit User Info</span></a><a href="/logout"><span>Logout</span></a></nav>
+
+    <div class = "mainbox">
+        <img class = "bkgpic" src="./images/nautilus1.png" alt="bkgpic">
+        <h1>Welcome Back {{User}}!</h1>  
+        </div>
+
+        <div id="main-cont">
+            {{#if message}}
+            <p class = "msg">{{message}}</p>  
+            {{/if}}
+
+            {{#if articles}}
+            <div id = "content-box">
+                <h1 id = "main-title">My Articles</h1>
+                <div class = "article-sec">
+                    {{#each articles}}
+                    <div class = "eachArticle"  style = "width: 475px">
+                        
+                        <div id = "edit-delete">
+                            <a class = "edit" href="/edit?id={{this.id}}"><img id = "edit" src="./images/edit_icon.png" alt="edit_icon"></a>
+                            <a class= "delete" href="/delete/article?id={{this.id}}"><img id = "delete" src="./images/delete_icon.png" data-articleID={{this.id}} alt="delete_icon"></a>
+                        </div>
+                        <div class = "cm-link">
+                            <a href="/fullArticleAndComment?id={{this.id}}&authorID={{../user.id}}">Go to your article page</a>
+                        </div>
+
+                        <span class="idSpan" hidden>{{this.id}}</span>
+
+                        <div class = "title-img">
+                            <h1 class = "article_title">{{this.title}}</h1>
+                                {{#if this.articleImageUrl}}
+                                <img class = "aimg" src="{{this.articleImageUrl}}" alt="" style = "width: 475px">
+                                {{/if}}
+                        </div>
+
+                        <div class = "author-sec">
+                            <img src="{{this.authorIcon}}" alt="" width="30"><span>{{this.authorName}}</span>
+                            <span>{{this.publishTime}}</span>    
+                        </div>
+                        
+                        <div class = "content" >
+                            <pre>{{{this.content}}} </pre>  
+                        </div>
+
+                    </div>
+
+                    {{/each}}
+                </div>
+                    {{#else}}
+                    <p>You haven't posted any articles yet. Create some now!</p>
+                    {{/else}}
+                {{/if}}
+        
+            </div>
+        </div>
+
+
+    </div>

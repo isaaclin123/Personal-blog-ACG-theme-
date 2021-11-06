@@ -1,0 +1,68 @@
+<div id="all-container">
+    <nav><img id  = "userimg" src="{{userImage}}" alt="" width="50"><span id = "teamname">FAI</span><a href="./myHomePage"><span>Back to MyPage</span></a><a href="./logout"><span>Logout</span></a></nav>
+
+    <div id = "main-container">
+        <h2>Edit your Article</h2>
+        <div id="both-forms">
+            <div id = "image-form">
+                <div id="imageDisplayDiv">
+                    <img src="{{thisArticleImage}}" alt="" id="currentImage" style = "max-height: 400px"><br> 
+                </div>
+
+                {{#if thisArticleImage}}
+                <div id = "remove-btn">
+                    <button id="removeImage">Remove image</button>                     
+                </div>
+                {{/if}}
+
+                <div id="imageEditTool">
+                    <form action="/uploadImageAgain" method="POST" enctype="multipart/form-data">
+                            {{#if thisArticleImage}}
+                            <label for="inpFile">Update the current image</label>
+                            {{else}}
+                            <label for="inpFile">Add a image!</label>
+                            {{/if}}
+
+                            <span class="form-group">
+                                <input id="inpFile" type="file" name="imageFile" accept=".png,.jpg,.jpeg,.bmp,.gif">
+                            </span>
+
+                            <span class="form-group-align-start">
+                                <button type="submit">Upload & Update</button>
+                                {{#if message}}
+                                <span id = "message">{{message}}</span>
+                                {{/if}}
+                            </span>
+                    </form>
+                    
+                </div>
+                <div id = "restore">
+                    <button id="restoreImage" >Restore Image</button>                     
+                </div>
+               
+            </div>
+
+            <div id = "text-form">
+                <form action="/newArticle" method ="POST">
+
+                    <div id="create_title">
+                        <label for="title">Enter Title:</label>
+                        <input type="text" id="title" name="title" value="{{titleValue}}">
+                    </div><br>
+
+                    <div id="editor-container">{{{content}}}</div>
+
+                    <pre hidden><code id="output-html"></code></pre>
+
+                    <div>
+                    <button type="submit" hidden >Post</button>
+                    </div>
+                    <div id = "post-article">
+                        <button id="submitButton">Post</button><br>&nbsp;&nbsp;<span id="tipForTitle" style="margin:10px;"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

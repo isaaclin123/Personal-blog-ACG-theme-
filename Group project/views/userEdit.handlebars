@@ -1,0 +1,103 @@
+<div id="container">
+    {{#if message}}
+    <p>{{message}}</p>
+    {{/if}}
+    <nav><img id  = "userimg" src="{{user.avatar_image}}" alt="" width="50"><span id = "teamname">FAI</span><a href="/myHomePage"><span>Back to my Homepage</span></a><a href="/logout"><span>Logout</span></a></nav>
+    
+        <div id = "newac-form">
+            <h1>Edit your information</h1> 
+            <h5>After updating your information, you will need to log in again.</h5>
+            <div id = "nform-inner">
+                    <form action="/app/user" method="POST">
+
+                        <div class = "txtfield">
+                            <label for="txtUsername">Username:</label>
+                            <input type="text" name="username" id="txtUsername" value={{defaultUsername}} required>
+                            <alert class = "sys-message" id="usernameAvailability"></alert>
+                        </div>
+
+                        <div class = "txtfield">
+                            <label for="txtPassword">Password:</label>
+                            <input type="password" name="password1" id="password1" required>
+                        </div>
+
+                        <div class = "txtfield">
+                            <label for="txtPassword">Re-enter Password:</label>
+                            <input type="password" name="password2" id="password2" required>
+                            <alert class = "sys-message" id="passwordConfirmation"></alert>
+                        </div>
+
+                        <div class = "txtfield">
+                            <label for="first_name">First Name:</label>
+                            <input type="text" name="first_name" id="first_name" value={{defaultFirstName}} required>
+                        </div>
+
+                        <div class = "txtfield">
+                            <label for="last_name">Last Name:</label>
+                            <input type="text" name="last_name" id="last_name" value={{defaultLastName}} required>
+                        </div>
+
+                        <div class = "txtarea">
+                            <label for="description">Self Description:</label><br>
+                            <textarea name="description" id="description" cols="30" rows="10" >{{defaultDescription}}</textarea>
+                        </div>
+
+                        <div class = "dob-field">
+                            <label for="dob">Date of Birth:</label>
+                            <input type="date" name="dob" id="dob" value={{defaultDOB}} required>
+                        </div>
+
+                        <div id="avatars">
+                            <p>Choose your Avatar icon:</p>
+
+                            <div class = "icons">
+                                <label class="avatars">
+                                    <input type="radio" name="avatar" value="./images/avatar_silver.png" checked>
+                                    <img src="./images/avatar_silver.png" alt="silver" width="50">
+                                </label>
+
+                                <label class="avatars">
+                                    <input type="radio" name="avatar" value="./images/avatar_kyouka.png">
+                                    <img src="./images/avatar_kyouka.png" alt="kyouka" width="50">
+                                </label>
+
+                                <label class="avatars">
+                                    <input type="radio" name="avatar" value="./images/avatar_ocata.png" checked>
+                                    <img src="./images/avatar_ocata.png" alt="cat" width="50">
+                                </label>
+
+                                <label class="avatars">
+                                    <input type="radio" name="avatar" value="./images/avatar_promerlin.png" checked>
+                                    <img src="./images/avatar_promerlin.png" alt="promerlin" width="50">
+                                </label>
+
+                                <label class="avatars">
+                                    <input type="radio" name="avatar" value="./images/avatar_orfevre.png" checked>
+                                    <img src="./images/avatar_orfevre.png" alt="orfevre" width="50">
+                                </label>
+
+                                <label class="avatars">
+                                    <input type="radio" name="avatar" value="./images/avatar_vasili.png" checked>
+                                    <img src="./images/avatar_vasili.png" alt="vasili" width="50">
+                                </label>
+
+                            </div>
+                        </div>
+
+                        <div class = "sub-del">
+                            <button type="submit" value = "submit" id="submitButton">Update account</button>
+                            {{!-- <button type="reset" value = "reset form">Reset Form</button> --}}
+                        </div>
+                    </form>
+                
+                <div class = "sub-del">
+                    <form action="/user/delete" method="get">
+                        <button type="submit" value = "submit" id="deleteButton">Delete account</button>
+                    </form>
+                </div>    
+            </div>
+            
+            
+        </div>
+
+</div>
