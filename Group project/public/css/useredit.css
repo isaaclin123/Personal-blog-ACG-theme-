@@ -1,0 +1,276 @@
+@media screen and (max-width: 1024px) {
+  body #nform-inner {
+    width: 400px;
+  }
+  body .sys-message { 
+    font-size: 10px;
+    white-space: normal;
+  }
+
+  body .txtfield input {
+    width: 100%;
+  }
+
+  body .txtarea textarea {
+    width: 100%;
+  }
+
+  body #deleteButton {
+    width: 400px;
+  }
+}
+
+body {
+  margin: 0px;
+}
+
+#newac-container {
+  overflow: hidden;
+}
+
+.sys-message {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 13px;
+  color: rgb(225, 226, 255);
+  position: absolute;
+  top: -17px;
+  left: 200px;
+  white-space: nowrap;
+}
+
+nav {
+  padding: 10px;
+  background: linear-gradient( 88.8deg,  rgba(239,171,245,1) 13.4%, rgba(196,181,249,1) 76.3% );
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Josefin Sans', sans-serif;
+  color:#f8f7ff;
+  font-size: 20px;
+}
+
+#teamname {
+  margin-top:20px;
+  margin-left: 10px;
+  margin-right: auto;
+}
+
+nav > a {
+  margin-top:20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  color:#f8f7ff;
+}
+
+
+#newac-form {
+  background: url("/images/avalon.png");
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#nform-inner {
+  padding: 40px 70px 40px 70px;
+  border-radius: 40px;
+  background-color: rgba(71, 71, 71, 0.5);
+  width: 800px;
+  box-shadow: 0 0 10px rgb(29, 20, 27);
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #186340;
+  padding:30px 0 30px 0;
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+form .txtfield {
+  position: relative;
+  margin: 30px 0;
+}
+
+.txtfield label {
+  position: absolute;
+  top: -20px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  width: 250px;
+  font-size: 18px;
+}
+
+.txtfield input {
+  width: 30%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: rgb(63, 63, 63, 0.2);
+  outline: none;  
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.txtarea {
+  position: relative;
+}
+
+.txtarea label {
+  position: absolute;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  width: 250px;
+  font-size: 18px;
+  left: 5px;
+  top: 0;
+}
+
+.txtarea textarea {
+  border: none;
+  background: rgba(240, 239, 239, 0.5);
+  outline: none;
+  width: 50%;
+  border-radius: 10px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.dob-field {
+  position: relative;
+  padding-top: 30px;
+}
+
+.dob-field label {
+  position: absolute;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  font-size: 18px;
+  width: 250px;
+  left: 5px;
+  top: 13px;
+
+}
+
+.dob-field input[type="date"] {
+  border-radius: 8px;
+  border: none;
+  content: none;
+  background: rgba(240, 239, 239, 0.5);
+  height: 30px;
+  text-align: center;
+  color:rgb(255, 255, 255);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+#avatars > p {
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    font-size: 18px;
+    left: 5px;
+    top: 13px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .avatars > input {
+    display: none;
+  }
+
+  .avatars > input + img {
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: .3s;
+  }
+  
+  .avatars > img:hover {
+    transform:scale(1.2);
+    transition: .3s;
+  }
+
+  .avatars > input:checked + img {
+    border: 3px solid rgb(140, 38, 172);
+    border-radius: 50px;
+    box-shadow: 0 0 5px rgb(140, 38, 172);
+  }
+
+.sub-del {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#submitButton {
+  margin: 5px 5px 10px 5px;
+  width: 500px;
+  height: 50px;
+    border: none;
+    background: rgba(119, 119, 119, 0.5);
+    box-shadow: 0 0 10px #F7F7F7;
+    border-radius: 20px;
+    font-size: 15px;
+    color: rgb(248, 224, 255);
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+#deleteButton {
+  margin: 10px 5px 5px 5px;
+  width: 500px;
+  height: 50px;
+    border: none;
+    background: rgba(119, 119, 119, 0.5);
+    box-shadow: 0 0 10px #F7F7F7;
+    border-radius: 20px;
+    font-size: 15px;
+    color: rgb(248, 224, 255);
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+#submitButton:hover, #deleteButton:hover {
+  box-shadow: 0 0 20px #ffffff;
+  font-size: 17px;
+  transition: .4s;
+}
+nav button, nav a{
+  transition: all 0.5s;
+}
+nav button:hover,nav a:hover{
+  padding-top: 5px;
+  color:#544d6e;
+}
+
+.footer {
+  padding: 20px;
+  background-image: linear-gradient( 102.7deg,  rgba(253,218,255,1) 8.2%, rgba(223,173,252,1) 19.6%, rgba(173,205,252,1) 36.8%, rgba(173,252,244,1) 73.2%, rgba(202,248,208,1) 90.9% );  
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  text-align: end;
+  color: rgb(66, 66, 66);
+}

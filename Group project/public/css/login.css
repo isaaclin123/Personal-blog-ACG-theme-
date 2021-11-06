@@ -1,0 +1,240 @@
+@media screen and (max-width: 1000px) {
+    body #login-container {
+        display: initial;
+    }
+
+    body #login-form {
+        background: url("/images/login-page-bkg.png");
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    body #form-inner {
+        background: rgb(236, 236, 236, 0.7);
+    }
+
+    body #form-inner > h1 {
+        color: rgb(39, 24, 104);
+    }
+
+    body form .txtfield {
+        position: relative;
+        border-bottom: 3px solid rgb(39, 24, 104);
+        margin: 30px 0;
+    }
+    
+    body .txtfield label {
+        color: rgb(39, 24, 104);
+    }
+
+    body .txtfield input {
+        color: rgb(39, 24, 104);
+    }
+
+    body .txtfield input:focus ~ label,
+    body .txtfield input:valid ~ label {
+        color: rgb(89, 22, 167);
+    }
+
+    body button[type="submit"] {
+        background: rgb(236, 236, 236, 0.8);
+        color:rgb(39, 24, 104);
+    }
+
+    body #logcrnew {
+        color: rgb(39, 24, 104); 
+    }
+    
+    body #logcrnew a {
+        color: #17664c;
+    }
+}
+
+body {
+    margin: 0px;
+}
+
+#login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "nav nav"
+    "img form";
+    overflow: hidden;
+    height: 100%;
+}
+    
+nav {
+    grid-area: nav;
+    padding: 10px;
+    background-image: linear-gradient( 248.5deg,  rgb(150, 200, 250) 1.4%, rgba(148,150,213,1) 39.3%, rgba(159,139,208,1) 68.4%, rgba(159,121,198,1) 89.7%, rgba(157,101,203,1) 99.9% );
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Josefin Sans', sans-serif;
+    color:#f8f7ff;
+    font-size: 20px;
+    transition: .5s;
+}
+
+#teamname {
+    margin-top:20px;
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+nav > a {
+    margin-top:20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color:#f8f7ff;
+}
+
+nav a:hover {
+    padding-top: 5px;
+    color:#544d6e;
+    transition: .5s;
+    }
+
+#arthur-bkg {
+    grid-area: img;
+    background: url("/images/login-page-bkg.png");
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+}
+
+#login-form {
+    grid-area: form;
+    background: linear-gradient(120deg, rgb(139, 215, 250), rgb(213, 176, 255));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 300px;
+    padding-top: 100px;
+}
+
+#form-msg {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(245, 245, 245);
+}
+
+#form-inner {
+    padding: 60px 80px 60px 80px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #F7F7F7;
+    width: 300px;
+}
+
+#form-inner > h1 {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    padding:0 0 20px 0;
+    font-size: 50px;
+    margin-top: 0px;;
+}
+
+form .txtfield {
+    position: relative;
+    border-bottom: 3px solid #F7F7F7;
+    margin: 30px 0;
+}
+
+.txtfield input { 
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;  
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.txtfield label {
+    position: absolute;
+    left: 5px;
+    top: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #FFEAC9;
+    width: 250px;
+    font-size: 20px;
+    opacity: 0.8;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.txtfield span::before {
+    content: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    transition: .3s;
+}
+
+.txtfield input:focus ~ label,
+.txtfield input:valid ~ label {
+    top: -12px;
+    color: #865df7;
+    font-size: 14px;
+}
+
+.txtfield input:focus ~ span::before,
+.txtfield input:valid ~ span::before {
+    width: 100%;
+} 
+
+button[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: none;
+    box-shadow: 0 0 5px #F7F7F7;
+    border-radius: 20px;
+    font-size: 18px;
+    color: #FFEAC9;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+button[type="submit"]:hover {
+    box-shadow: 0 0 20px #ffffff;
+    font-size: 20px;
+    transition: .4s;
+}
+
+#logcrnew {
+    margin:0 0 30px 0;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #FFEAC9;  
+}
+
+#logcrnew a {
+    color: #865df7;
+    text-decoration: none;
+}
+#logcrnew a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    padding: 20px;
+    background-image: linear-gradient( 111.5deg,  rgba(163,197,230,1) 1.4%, rgba(148,150,213,1) 39.3%, rgba(159,139,208,1) 68.4%, rgba(159,121,198,1) 89.7%, rgba(157,101,203,1) 99.9% );
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    text-align: end;
+    color: white;
+  }

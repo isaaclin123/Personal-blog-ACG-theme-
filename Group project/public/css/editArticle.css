@@ -1,0 +1,280 @@
+@media screen and (max-width: 1048px) {
+
+    body #main-container h2 {
+            position: relative;
+        }
+    body  #both-forms {
+            display: grid;
+            grid-template-areas: "img"
+            "txt";
+            align-items: center;
+            }
+
+    body  #text-form {       
+            grid-area: txt;
+            height: auto;
+            width: auto;
+            }
+
+    body #image-form form label {
+        font-size: 15px;
+    }        
+}
+
+body {
+    background-color: #f8f7ff;
+    margin: 0px;
+    }
+
+    nav {
+        padding: 10px;
+        background-image: linear-gradient( 109.6deg,  rgba(61,121,176,1) 11.3%, rgba(35,66,164,1) 91.1% );
+        display: flex;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 20px;
+    }
+    
+    #teamname {
+        margin-top:20px;
+        margin-left: 10px;
+        margin-right: auto;
+    }
+    
+    nav > a {
+        margin-top:20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        text-decoration: none;
+        color:#f8f7ff;
+    }
+
+#all-container {
+    background: url("/images/outercity-night.png");
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+     
+}
+#main-container {
+    padding: 60px;
+}
+
+#main-container h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    font-size: 50px;
+    color: rgb(250, 233, 185);
+}
+
+#both-forms {
+    display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-areas: "img txt";
+justify-content: center;
+}
+
+#image-form {
+    grid-area: img;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+
+}
+#imageDisplayDiv {
+    display: flex;
+    justify-content: center;
+}
+#remove-btn {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+#remove-btn button {
+    width: 40%;
+    height: 40px;
+    background:rgba(240, 240, 240, 0.8);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 17px;
+    border: none;
+    transition: .3s;
+}
+
+#remove-btn button:hover {
+    transition: .3s;
+    transform: scale(1.1, 1.1);
+}
+#restore {
+ display: flex;
+    justify-content: center;
+}
+
+#restoreImage {
+    padding: 1em;
+    width:fit-content;
+    background:rgba(240, 240, 240, 0.8);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 17px;
+    border: none;
+}
+
+#image-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "l u"
+     "l c";
+}
+
+#image-form form label {
+    grid-area: l;
+    font-size: 23px;
+    font-family: 'Cabin', sans-serif;
+    top: 60px;
+    text-align: center;
+    padding: 10px;
+    color: rgb(63, 31, 121);
+}
+
+.form-group {
+    grid-area: u;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+}
+
+::-webkit-file-upload-button {
+    width: 170px;
+    height: 40px;
+    padding: 5px;
+    background:rgba(240, 240, 240, 0.8);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 17px;
+    border: none;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+::-webkit-file-upload-button:hover {
+    transition: .3s;
+    transform: scale(0.9, 0.9);
+}
+
+.form-group-align-start {
+    grid-area: c;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+}
+
+.form-group-align-start button[type="submit"] {
+    width: 190px;
+    height: 40px;
+    padding: 5px;
+    background:rgba(240, 240, 240, 0.8);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 17px;
+    border: none;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.form-group-align-start button[type="submit"]:hover {
+    transition: .3s;
+    transform: scale(0.9, 0.9);
+}
+
+#message {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    margin-left: 5px;
+    color: rgb(63, 31, 121);
+    text-align: center;
+}
+
+#text-form {
+    grid-area: txt;
+    height: 600px;
+    position: relative;
+    background: rgb(255, 255, 255, 0.9);
+    padding: 10px;
+}
+
+#create_title {
+    text-align: center;
+    margin: 30px;
+}
+
+#create_title label {
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    color:  rgb(9, 26, 9);
+    width: 100%;
+    font-size: 25px;
+}
+
+#create_title input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: rgba(49, 14, 88, 0.5);
+    outline: none;  
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    padding: 5px;
+    box-shadow: 5px 5px 5px rgba(180, 180, 180);
+    border-radius: 50px;
+    text-align: center;
+}
+
+#editor-container {
+    height: 250px;
+    width: 100%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+#post-article {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+#post-article button {
+    width: 150px;
+    height: 40px;
+    padding: 5px;
+    background:rgba(179, 179, 179, 0.8);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 17px;
+    border: none;
+    box-shadow: 0 0 10px rgb(233, 232, 232);
+    transition: .3s;
+}
+
+#post-article button:hover {
+    color: rgb(253, 253, 253);
+    background:rgb(197, 171, 221);
+    transform: scale(0.9, 0.9);
+}
+nav button, nav a{
+    transition: all 0.5s;
+}
+nav button:hover,nav a:hover{
+padding-top: 3px;
+color:#544d6e;
+}
+
+.footer {
+    padding: 20px;
+    background-image: linear-gradient( 109.6deg,  rgba(61,121,176,1) 11.3%, rgba(35,66,164,1) 91.1% );
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    text-align: end;
+    color: white;
+}
